@@ -1,14 +1,12 @@
 package org.expensetracker.authentication.service;
 
-import io.jsonwebtoken.security.Password;
 import lombok.RequiredArgsConstructor;
 import org.expensetracker.authentication.dto.LoginResponseDto;
 import org.expensetracker.authentication.dto.SignupRequestDto;
 import org.expensetracker.authentication.entity.User;
 import org.expensetracker.authentication.repository.UserRepository;
-import org.expensetracker.authentication.util.AuthUtil;
+import org.expensetracker.authentication.util.JwtUtil;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +18,7 @@ public class SignupService {
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
-    private final AuthUtil authUtil;
+    private final JwtUtil jwtUtil;
     private final PasswordEncoder passwordEncoder;
 
     public LoginResponseDto signup(SignupRequestDto signupRequestDto) {
@@ -41,7 +39,7 @@ public class SignupService {
 
         // add jwt
         
-        loginResponseDto.setJwt(authUtil.jwts(loginResponseDto.getUsername(), User.Role.USER));
+        loginResponseDto.setJwt(jwtUtil.jwts(loginResponseDto.getUsername(), User.Role.USER));
 
         return loginResponseDto;
     }
