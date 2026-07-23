@@ -2,6 +2,7 @@ package org.expensetracker.authentication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.expensetracker.category.entity.Category;
 
 import java.math.BigDecimal;
 import java.util.UUID;

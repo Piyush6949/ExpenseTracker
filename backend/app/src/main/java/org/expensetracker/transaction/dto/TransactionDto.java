@@ -1,12 +1,10 @@
 package org.expensetracker.transaction.dto;
 
 import lombok.*;
-import org.expensetracker.authentication.entity.Category;
 import org.expensetracker.transaction.entity.Transaction;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor

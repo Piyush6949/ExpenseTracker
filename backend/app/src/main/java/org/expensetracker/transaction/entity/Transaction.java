@@ -2,7 +2,7 @@ package org.expensetracker.transaction.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.expensetracker.authentication.entity.Category;
+import org.expensetracker.category.entity.Category;
 import org.expensetracker.authentication.entity.User;
 
 import java.math.BigDecimal;

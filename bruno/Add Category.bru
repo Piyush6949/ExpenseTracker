@@ -1,0 +1,22 @@
+meta {
+  name: Add Category
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8080/categories
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Gym1"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

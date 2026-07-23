@@ -1,19 +1,14 @@
 package org.expensetracker.transaction.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.expensetracker.authentication.entity.Category;
-import org.expensetracker.authentication.entity.User;
+import org.expensetracker.category.entity.Category;
 import org.expensetracker.transaction.entity.Transaction;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor

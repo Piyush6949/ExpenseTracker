@@ -1,7 +1,8 @@
-package org.expensetracker.authentication.entity;
+package org.expensetracker.category.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.expensetracker.authentication.entity.User;
 
 import java.util.UUID;
 
