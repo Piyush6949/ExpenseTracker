@@ -1,0 +1,29 @@
+meta {
+  name: Add Expense
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/expense
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "amount": 10000,
+    "description": "Party with friends",
+    "paymentMode": "UPI",
+    "receiptUrl": "https://example.com/receipts/dinner.jpg",
+    "category": {
+      "id": "061c4df6-7158-4d82-b798-d3927307896e"
+    },
+    "date": "2026-07-23"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

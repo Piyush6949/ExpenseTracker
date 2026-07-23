@@ -1,0 +1,29 @@
+meta {
+  name: Add Income
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/income
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "amount": 5000,
+    "description": "Lunch with girlfriend",
+    "paymentMode": "UPI",
+    "receiptUrl": "https://example.com/receipts/lunch.jpg",
+    "category": {
+      "id": "47ca99c1-2ba5-4b33-a23d-083691b23413"
+    },
+    "date": "2026-07-23"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

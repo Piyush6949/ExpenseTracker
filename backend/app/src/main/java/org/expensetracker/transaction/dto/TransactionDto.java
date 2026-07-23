@@ -13,12 +13,11 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ExpenseDto {
-    private UUID id;
-
-    private Transaction.TransactionType type;
+public class TransactionDto {
 
     private BigDecimal amount;
+
+    private Transaction.TransactionType transactionType;
 
     private String description;
 
@@ -26,7 +25,7 @@ public class ExpenseDto {
 
     private String receiptUrl;
 
-    private Category category;
+    private String categoryName;
 
     private LocalDate date;
 }

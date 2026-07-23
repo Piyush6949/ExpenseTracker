@@ -1,5 +1,6 @@
 package org.expensetracker.transaction.service;
 
+
 import lombok.RequiredArgsConstructor;
 import org.expensetracker.authentication.entity.User;
 import org.expensetracker.authentication.util.JwtUtil;
@@ -15,24 +16,25 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ExpenseService {
+public class IncomeService {
 
     private final ModelMapper modelMapper;
     private final TransactionRepository transactionRepository;
 
-    public List<TransactionDto> getAllExpenses(){
+
+    public List<TransactionDto> getAllIncomes(){
 
         // get user from SecurityContext holder
         User user = UserUtil.getCurrentUser();
 
-        List<Transaction> res = transactionRepository.findByUserAndType(user,Transaction.TransactionType.EXPENSE);
+        List<Transaction> res = transactionRepository.findByUserAndType(user,Transaction.TransactionType.INCOME);
 
         return res.stream()
                 .map(transaction -> modelMapper.map(transaction, TransactionDto.class))
                 .toList();
     }
 
-    public TransactionDto addExpense(TransactionRequestDto transactionRequestDto) {
+    public TransactionDto addIncome(TransactionRequestDto transactionRequestDto) {
 
 
         Transaction transaction = modelMapper.map(transactionRequestDto,Transaction.class);
@@ -45,5 +47,4 @@ public class ExpenseService {
 
         return modelMapper.map(transactionRepository.save(transaction), TransactionDto.class);
     }
-
 }

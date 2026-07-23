@@ -26,7 +26,7 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/signup", "/auth/login","/expense").permitAll()
+                        .requestMatchers("/auth/signup", "/auth/login").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session ->
