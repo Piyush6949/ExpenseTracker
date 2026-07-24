@@ -1,7 +1,8 @@
-package org.expensetracker.authentication.entity;
+package org.expensetracker.budget.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.expensetracker.authentication.entity.User;
 import org.expensetracker.category.entity.Category;
 
 import java.math.BigDecimal;
@@ -11,7 +12,7 @@ import java.util.UUID;
 @Table(
         name = "budget",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"user_id", "category", "month", "year"})
+                @UniqueConstraint(columnNames = {"user_id", "category_id", "month", "year"})
         }
 )
 @Getter

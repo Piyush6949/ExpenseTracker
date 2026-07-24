@@ -42,7 +42,10 @@ public class TransactionService {
     public void deleteTransaction(UUID id) {
         User user = UserUtil.getCurrentUser();
 
-        transactionRepository.deleteByIdAndUser(id,user);
+        Transaction transaction = transactionRepository.findByIdAndUser(id,user)
+                .orElseThrow(() -> new RuntimeException("Transaction Not found"));
+
+        transactionRepository.delete(transaction);
     }
 
 }
